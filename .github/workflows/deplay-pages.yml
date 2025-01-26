@@ -30,18 +30,8 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Install dependencies
-        run: |
-          sudo apt update
-          sudo apt upgrade
-          sudo apt install reprepro
-      
-      - name: Configure GPG Key
-        run: |
-          echo "${{ secrets.GPG_SIGNING_KEY }}" | gpg --import
-
       - name: Build repository
-        uses: DevChall-by-SDCY-and-VXM/build-deb-repo@v0.0.2
+        uses: DevChall-by-SDCY-and-VXM/build-deb-repo@v0.0.3
         with:
           label: Sample
           from_metadatas: |
